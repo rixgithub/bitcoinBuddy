@@ -9,18 +9,10 @@ var cors = require ('cors');
 var twilio = require('twilio');
 var client = new twilio (process.env.TWILIO_ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN); 
 
-// const koa = require('koa');
-// const path = require('path');
-// const static = require('koa-static');
-// const fs = require('fs');
-// const route = require('koa-route');
-// const app = koa();
-
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 3001;
 var mongoose = require('mongoose');
-var flash    = require('connect-flash');
 
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -65,7 +57,7 @@ db.once("open", function() {
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static("public"));
 

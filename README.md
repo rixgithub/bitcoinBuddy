@@ -23,4 +23,6 @@ BitCoin Buddy is an app utlizing React.js allowing user to set up SMS notificati
 * Request
 * Twilio
 
-
+<p align="left">
+  <img src="/screenshots/bitcoin.png" width="350"/>
+</p>
